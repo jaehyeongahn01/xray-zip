@@ -1,0 +1,22 @@
+{
+  "version": "v5",
+  "note": "labelsmooth0.1",
+  "run_id": "20261014_0519",
+  "split": "patientwise val resplit from train (VAL_RATIO)",
+  "val_ratio": 0.15,
+  "img_size": 224,
+  "batch_size": 32,
+  "epochs": 13,
+  "lr": 0.0001,
+  "weight_decay": 0.001,
+  "seed": 42,
+  "model": "resnet18 (ImageNet pretrained)",
+  "scheduler": "CosineAnnealingLR(T_max=EPOCHS)",
+  "label_smoothing": 0.1,
+  "augment": "HFlip0.5 + Rotate12 + ColorJitter0.2 + RandomResizedCrop0.85",
+  "class_weights": [
+    1.2979999780654907,
+    0.6901000142097473,
+    1.2811000347137451
+  ]
+}

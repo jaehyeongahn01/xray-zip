@@ -1,0 +1,116 @@
+/* 내 기록 / 순위표 공용 */
+.stat-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 1rem 0 1.6rem;
+}
+
+.stat-card {
+  background: rgba(48, 37, 61, 0.55);
+  border: 1px solid rgba(247, 138, 159, 0.12);
+  border-radius: 14px;
+  padding: 1.1rem;
+  text-align: center;
+}
+
+.stat-card .num {
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+
+.stat-card .lbl {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-top: 0.3rem;
+}
+
+/* 가로 CSS 막대 (정확도 등) */
+.bar-row {
+  display: grid;
+  grid-template-columns: 110px 1fr 56px;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.7rem;
+  font-size: 0.92rem;
+}
+
+.bar-track {
+  height: 14px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #e45d7b, #f78a9f);
+  border-radius: 999px;
+  transition: width 0.25s ease;
+}
+
+.bar-val {
+  text-align: right;
+  color: var(--muted);
+}
+
+/* 최근 추이 — 세로 막대 시퀀스 */
+.trend {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.5rem;
+  height: 140px;
+  padding: 0.6rem;
+  background: rgba(48, 37, 61, 0.4);
+  border-radius: 12px;
+}
+
+.trend-bar {
+  flex: 1;
+  min-width: 10px;
+  background: linear-gradient(180deg, #f78a9f, #e45d7b);
+  border-radius: 6px 6px 0 0;
+  position: relative;
+}
+
+.trend-bar span {
+  position: absolute;
+  top: -1.2rem;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+
+/* 순위 테이블 */
+.lb-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.93rem;
+}
+
+.lb-table th,
+.lb-table td {
+  padding: 0.6rem 0.5rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(247, 138, 159, 0.1);
+}
+
+.lb-table th {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.lb-mini-track {
+  height: 10px;
+  min-width: 80px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.lb-mini-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #e45d7b, #f78a9f);
+}

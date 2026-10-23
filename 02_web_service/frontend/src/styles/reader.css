@@ -1,0 +1,71 @@
+/* 판독기 화면 — 세 이미지는 원본 비율 유지로 렌더(512 정사각 강제 금지) */
+.reader-image-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 0.5rem 0 1rem;
+}
+
+.reader-image {
+  max-width: 100%;
+  height: auto;
+  max-height: 640px;
+  object-fit: contain;
+  border-radius: 12px;
+  background: #0e0f1a;
+  padding: 10px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
+}
+
+.reader-view-btns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.6rem;
+  margin-bottom: 1.2rem;
+}
+
+.reader-thresh {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin: 0.6rem 0 1.2rem;
+}
+
+.reader-thresh label {
+  font-size: 0.9rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.reader-uploader {
+  display: block;
+  margin: 1rem 0;
+  padding: 1.4rem;
+  text-align: center;
+  background: rgba(48, 37, 61, 0.4);
+  border: 1.5px dashed rgba(247, 138, 159, 0.3);
+  border-radius: 14px;
+  cursor: pointer;
+}
+
+.reader-uploader input {
+  display: block;
+  margin: 0.6rem auto 0;
+  color: var(--text);
+}
+
+.reader-layout { display: grid; grid-template-columns: minmax(0, 1fr); gap: 24px; align-items: start; }
+.reader-layout.history-open { grid-template-columns: 280px minmax(0, 1fr); }
+.reader-main { min-width: 0; }
+.reader-history { background: #222338; border: 1px solid #414259; border-radius: 14px; padding: 16px; position: sticky; top: 90px; max-height: calc(100vh - 110px); overflow-y: auto; }
+.history-heading { display: flex; align-items: center; justify-content: space-between; }
+.reader-history label { display: block; margin: 12px 0; }
+.reader-history input, .reader-history select { display: block; box-sizing: border-box; width: 100%; margin-top: 6px; padding: 9px; background: #191a2b; color: #f5e9ed; border: 1px solid #666; border-radius: 6px; color-scheme: dark; }
+.reader-history small { display: block; margin: 8px 0; }
+.history-item { width: 100%; display: block; text-align: left; padding: 12px; margin-top: 10px; background: #191a2b; border: 1px solid #414259; border-radius: 8px; color: #f5e9ed; cursor: pointer; }
+.history-item:hover, .history-item:focus-visible { border-color: #e45d7b; }
+.history-item strong { display: block; overflow-wrap: anywhere; }
+.history-item span { display: block; color: #f78a9f; margin-top: 8px; }
+@media (max-width: 760px) { .reader-layout.history-open { grid-template-columns: 1fr; } .reader-history { position: static; max-height: 50vh; } }
+.history-heading { gap: 10px; }
+.history-heading h3 { white-space: nowrap; font-size: 1rem; }
+.history-heading .btn { width: auto; min-width: 0; padding: 7px 10px; }

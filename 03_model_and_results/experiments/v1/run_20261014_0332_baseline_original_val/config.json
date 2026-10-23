@@ -1,0 +1,19 @@
+{
+  "version": "v1",
+  "note": "baseline_original_val",
+  "run_id": "20261014_0332",
+  "split": "original (train/val/test 그대로)",
+  "img_size": 224,
+  "batch_size": 32,
+  "epochs": 10,
+  "lr": 0.0001,
+  "weight_decay": 0.0001,
+  "seed": 42,
+  "model": "resnet18 (ImageNet pretrained)",
+  "augment": "HFlip0.5 + Rotate7 + ColorJitter0.1",
+  "class_weights": [
+    1.2964999675750732,
+    0.6872000098228455,
+    1.2927000522613525
+  ]
+}

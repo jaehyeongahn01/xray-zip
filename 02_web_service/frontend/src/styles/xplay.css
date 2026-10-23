@@ -1,0 +1,41 @@
+/* X-PLAY 내부 GAME / RANK 서브탭. 테마 변수만 사용. */
+
+.xplay-tabs {
+  display: inline-flex;
+  gap: 0.3rem;
+  margin-bottom: 1.4rem;
+  background: rgba(48, 37, 61, 0.4);
+  border: 1px solid rgba(247, 138, 159, 0.12);
+  border-radius: 12px;
+  padding: 0.25rem;
+}
+
+.xplay-tab {
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  padding: 0.45rem 1.2rem;
+  border-radius: 9px;
+  cursor: pointer;
+  transition: color 0.15s ease, background 0.15s ease;
+}
+
+.xplay-tab:hover {
+  color: var(--text);
+}
+
+.xplay-tab--active {
+  color: #fff;
+  background: linear-gradient(135deg, rgba(228, 93, 123, 0.3), rgba(247, 138, 159, 0.18));
+  box-shadow: 0 4px 16px rgba(228, 93, 123, 0.3);
+}
+
+/* RANK 탭: 내 기록과 순위표 구분선 */
+.xplay-rank-divider {
+  height: 1px;
+  background: rgba(247, 138, 159, 0.15);
+  margin: 2.4rem 0;
+}

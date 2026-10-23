@@ -1,0 +1,14 @@
+{
+  "version": "v6",
+  "note": "batch16_lr3e4",
+  "run_id": "20261014_0600",
+  "split": "patientwise val resplit",
+  "img_size": 224,
+  "batch_size": 16,
+  "epochs": 13,
+  "lr": 0.0003,
+  "weight_decay": 0.001,
+  "seed": 42,
+  "model": "resnet18 (ImageNet pretrained)",
+  "scheduler": "CosineAnnealingLR"
+}

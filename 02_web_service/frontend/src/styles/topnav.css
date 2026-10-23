@@ -1,0 +1,114 @@
+/* 상단 작은 글씨 텍스트 네비 — Streamlit 왼쪽 사이드바 선택을 대체 */
+.topnav {
+  display: flex;
+  gap: 1.4rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0 1.1rem;
+  flex-wrap: wrap;
+}
+
+.topnav-links {
+  display: flex;
+  gap: 1.4rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* 우측 사용자 영역 */
+.topnav-user {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.topnav-user-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.topnav-logout {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--muted);
+  background: transparent;
+  border: 1px solid rgba(247, 138, 159, 0.25);
+  border-radius: 999px;
+  padding: 0.25rem 0.8rem;
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.topnav-logout:hover {
+  color: var(--text);
+  border-color: var(--accent2);
+}
+
+.topnav-link {
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  color: var(--muted);
+  padding: 0.15rem 0;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.topnav-link:hover {
+  color: var(--text);
+}
+
+.topnav-link--active {
+  color: var(--accent2);
+  border-bottom-color: var(--accent);
+}
+
+/* ---- XRAY ZIP 브랜드 적용 ---- */
+
+/* 왼쪽 로고 */
+.topnav-logo {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 0.4rem;
+}
+
+/* 비활성 메뉴(X-LAB) — 링크 아님, 클릭 불가로 보이게 */
+.topnav-link--disabled {
+  color: var(--muted);
+  opacity: 0.55;
+  cursor: not-allowed;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.topnav-link--disabled:hover {
+  color: var(--muted);
+}
+
+/* Coming Soon 배지 */
+.topnav-soon {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  color: var(--accent2);
+  background: rgba(247, 138, 159, 0.12);
+  border: 1px solid rgba(247, 138, 159, 0.3);
+  border-radius: 999px;
+  padding: 0.08rem 0.4rem;
+  line-height: 1.4;
+}
+
+/* 모바일: 네비를 세로로 자연스럽게 접기 */
+@media (max-width: 640px) {
+  .topnav {
+    gap: 0.8rem;
+  }
+  .topnav-links {
+    gap: 1rem;
+    order: 3;
+    width: 100%;
+  }
+}

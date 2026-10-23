@@ -1,0 +1,150 @@
+/* XRAY ZIP 랜딩 — Hero + 소개 + Feature 카드. 테마 변수만 사용, 반응형. */
+
+/* ---- Hero ---- */
+.hero {
+  text-align: center;
+  padding: 2.6rem 1rem 2.2rem;
+}
+
+.hero-logo {
+  margin-bottom: 1.4rem;
+}
+
+.hero-slogan {
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 800;
+  margin: 0.2rem 0 0.1rem;
+  background: linear-gradient(90deg, #f78a9f, #e45d7b);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-slogan-kr {
+  color: var(--muted);
+  font-size: 0.98rem;
+  margin: 0 0 1.3rem;
+}
+
+.hero-sub {
+  color: var(--text);
+  font-size: 1.05rem;
+  margin: 0.2rem 0 0.1rem;
+}
+
+.hero-sub-en {
+  color: var(--muted);
+  font-size: 0.88rem;
+  font-style: italic;
+  margin: 0 0 1.8rem;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero-cta-btn {
+  width: auto;
+  min-width: 180px;
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
+}
+
+/* ---- 소개 ---- */
+.intro {
+  max-width: 760px;
+  margin: 0 auto 2.4rem;
+  text-align: center;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+/* ---- Feature 카드 ---- */
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.1rem;
+}
+
+.feature-card {
+  background: rgba(48, 37, 61, 0.55);
+  border: 1px solid rgba(247, 138, 159, 0.14);
+  border-radius: 18px;
+  padding: 1.6rem 1.4rem;
+  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+  cursor: pointer;
+  position: relative;
+  outline: none;
+}
+
+.feature-card:hover,
+.feature-card:focus-visible {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+  box-shadow: 0 10px 30px rgba(228, 93, 123, 0.22);
+}
+
+/* 미구현 카드: 클릭 유도하지 않음 */
+.feature-card--soon {
+  cursor: default;
+  opacity: 0.72;
+}
+
+.feature-card--soon:hover {
+  transform: none;
+  border-color: rgba(247, 138, 159, 0.14);
+  box-shadow: none;
+}
+
+.feature-icon {
+  font-size: 2rem;
+  margin-bottom: 0.6rem;
+}
+
+.feature-tag {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--accent2);
+  letter-spacing: 0.3px;
+}
+
+.feature-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0.15rem 0 0.6rem;
+}
+
+.feature-desc {
+  font-size: 0.86rem;
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.feature-soon {
+  display: inline-block;
+  margin-top: 0.9rem;
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: var(--accent2);
+  background: rgba(247, 138, 159, 0.12);
+  border: 1px solid rgba(247, 138, 159, 0.3);
+  border-radius: 999px;
+  padding: 0.14rem 0.55rem;
+}
+
+/* ---- 반응형 ---- */
+@media (max-width: 820px) {
+  .features {
+    grid-template-columns: 1fr;
+  }
+  .hero-cta-btn {
+    width: 100%;
+  }
+}

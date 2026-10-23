@@ -1,0 +1,109 @@
+/* 로그인/회원가입 게이트 — 테마 변수만 사용(--bg/--bg2/--accent/--accent2/--text/--muted). */
+
+.auth-wrap {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 420px;
+}
+
+/* 로그인/회원가입 탭 토글 */
+.auth-tabs {
+  display: flex;
+  gap: 0.4rem;
+  margin-bottom: 1.2rem;
+  background: rgba(48, 37, 61, 0.4);
+  border: 1px solid rgba(247, 138, 159, 0.12);
+  border-radius: 14px;
+  padding: 0.3rem;
+}
+
+.auth-tab {
+  flex: 1;
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  font-size: 0.92rem;
+  font-weight: 600;
+  padding: 0.55rem 0.4rem;
+  border-radius: 11px;
+  cursor: pointer;
+  transition: color 0.15s ease, background 0.15s ease;
+}
+
+.auth-tab:hover {
+  color: var(--text);
+}
+
+.auth-tab--active {
+  color: #fff;
+  background: linear-gradient(135deg, rgba(228, 93, 123, 0.3), rgba(247, 138, 159, 0.18));
+  box-shadow: 0 4px 16px rgba(228, 93, 123, 0.3);
+}
+
+/* 폼 필드 간격 */
+.auth-field {
+  margin-bottom: 0.9rem;
+}
+
+.auth-label {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 0.35rem;
+}
+
+/* 입력칸 아래 보조 안내 (예: ID 허용 문자) */
+.auth-hint {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+/* select를 .text-input 톤에 맞춤 */
+select.text-input {
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+select.text-input option {
+  background: var(--bg2);
+  color: var(--text);
+}
+
+/* 라벨과 인라인 에러를 한 줄 양 끝에 배치 (예: "비밀번호 확인" ... "비밀번호가 다릅니다.") */
+.auth-label--row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+/* 비밀번호 불일치 인라인 경고 (빨간색) */
+.auth-error-inline {
+  color: #ff6b6b;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* 불일치 시 입력칸 테두리도 빨간색으로 강조 */
+.text-input--error {
+  border-color: #ff6b6b !important;
+  box-shadow: 0 0 0 1px rgba(255, 107, 107, 0.35);
+}
+
+/* 로그인 카드 상단 브랜드 */
+.auth-brand {
+  margin-bottom: 0.5rem;
+}
+
+.auth-brand-sub {
+  line-height: 1.6;
+}
