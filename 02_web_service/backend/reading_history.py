@@ -19,6 +19,8 @@ def s3_client():
     return boto3.client('s3', region_name=config.AWS_REGION)
 
 def save_reading(uid, filename, pil, result):
+    if not config.S3_BUCKET:
+        raise RuntimeError("Configure CXR_S3_BUCKET to enable reading history storage.")
     rid = str(uuid.uuid4())
     # 회원가입에서 ID를 영문/숫자/-/_ 로 제한하므로 원문을 S3 폴더명으로 그대로 쓴다
     # (S3 콘솔에서 폴더만 보고 누구 것인지 바로 구분 가능). 방어적으로 한 번 더 검증한다.

@@ -59,6 +59,8 @@ def _ensure_admin():
     repo = get_repository()
     if repo.get_account(config.ADMIN_USER_ID) is not None:
         return
+    if not config.ADMIN_PASSWORD:
+        raise RuntimeError("Set ADMIN_PASSWORD before creating the initial administrator.")
     salt = secrets.token_hex(16)
     password_hash = _hash_password(config.ADMIN_PASSWORD, salt)
     repo.create_account(

@@ -33,11 +33,11 @@ THRESH_MAX = 0.9
 # 서버 기동 시 이 계정이 없으면 자동 생성한다(app.py lifespan).
 # records.json 을 비우거나 지워도 항상 되살아나 로그인 확인용으로 쓸 수 있다.
 # 비밀번호는 저장 시 salt+sha256 으로 해시되며 평문은 파일에 남지 않는다.
-# 기본 비번은 운영 전환 시 환경변수 ADMIN_PASSWORD 로 덮어쓰는 것을 권장한다.
+# 첫 관리자 생성 전에 ADMIN_PASSWORD 환경변수를 지정해야 한다.
 ADMIN_USER_ID = os.environ.get("ADMIN_USER_ID", "admin")
 ADMIN_NAME = os.environ.get("ADMIN_NAME", "관리자")
 ADMIN_OCCUPATION = "기타"
-ADMIN_PASSWORD = os.environ.get("ADMIN_PASSWORD", "0000")
+ADMIN_PASSWORD = os.environ.get("ADMIN_PASSWORD", "")
 
 # webapp 모듈(inference / game_logic) import 가능하게 경로 삽입 (設計)
 if WEBAPP_DIR not in sys.path:
@@ -48,6 +48,6 @@ REPOSITORY_BACKEND = os.environ.get("CXR_REPOSITORY", "sqlite")
 AWS_REGION = os.environ.get("AWS_REGION", "ap-northeast-2")
 
 SQLITE_PATH = os.path.join(DATA_DIR, "xray-zip.sqlite3")
-S3_BUCKET = os.environ.get("CXR_S3_BUCKET", "aws-say3-student-dataset")
-S3_PREFIX = os.environ.get("CXR_S3_PREFIX", "students/aws-say3-11/P1/readings")
+S3_BUCKET = os.environ.get("CXR_S3_BUCKET", "")
+S3_PREFIX = os.environ.get("CXR_S3_PREFIX", "xray-zip/readings")
 COOKIE_SECURE = os.environ.get("CXR_COOKIE_SECURE", "0") == "1"
